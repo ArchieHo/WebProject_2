@@ -18,6 +18,11 @@ header {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0 8px 6px -6px rgb(109, 109, 109);
 
   div.logo {
     display: flex;
@@ -113,11 +118,20 @@ main {
         padding: 1rem;
         flex: 1 1 300px;
 
-        img {
-          margin: 1rem 0rem;
+        div.image-container {
+          overflow: hidden;
           width: 15vw;
           height: 15vw;
           border-radius: 50%;
+          img {
+            width: 15vw;
+            height: 15vw;
+            border-radius: 50%;
+            transition: all 0.2s;
+          }
+          img:hover {
+            transform: scale(1.2);
+          }
         }
 
         h4 {
@@ -188,6 +202,22 @@ footer {
       }
     }
   }
+}
+
+// scrollbar setting
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5da2a0;
 }
 
 @media screen and (max-width: 700px) {

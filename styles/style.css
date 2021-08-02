@@ -24,6 +24,13 @@ header {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+  -webkit-box-shadow: 0 8px 6px -6px #6d6d6d;
+          box-shadow: 0 8px 6px -6px #6d6d6d;
 }
 
 header div.logo {
@@ -162,11 +169,24 @@ main section.second section.cards div.card {
           flex: 1 1 300px;
 }
 
-main section.second section.cards div.card img {
-  margin: 1rem 0rem;
+main section.second section.cards div.card div.image-container {
+  overflow: hidden;
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
+}
+
+main section.second section.cards div.card div.image-container img {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+main section.second section.cards div.card div.image-container img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main section.second section.cards div.card h4 {
@@ -253,6 +273,21 @@ footer section.links a {
 footer section.links a img {
   width: 5vw;
   height: 5vw;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5da2a0;
 }
 
 @media screen and (max-width: 700px) {
